@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+</head>
+<body>
+<h1>Szerkesztés</h1>
+<form method="POST">
+    <input name="name" th:value="${recipe.name}"/>
+    <textarea name="description" th:text="${recipe.description}"></textarea>
+    <input type="submit"/>
+</form>
+</body>
+</html>

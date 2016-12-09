@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 th:text="${title}">Oldal címe</h1>
+<table>
+    <tr th:each="recipe, iterStat:${recipes}">
+        <td th:text="${recipe.name}">Recipe 1</td>
+        <td th:text="${recipe.description}">Leírás 1</td>
+        <td>
+            <a th:href="@{'/recipe/'+${iterStat.index}}">Szerkesztés</a>
+        </td>
+        <td>
+            <form th:action="@{'/recipe/'+${iterStat.index}+'/delete'}" method="post">
+                <input type="submit" value="Törléss">
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
